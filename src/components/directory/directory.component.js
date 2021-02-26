@@ -49,13 +49,14 @@ class Directory extends React.Component {
     return (
       <div className="directory-menu">
         {
-        // this.state.sections.map(({ title, imageUrl, id, size }) => (
-        //   <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
-        // ))
-        //the bellow code acts like obove code
-        this.state.sections.map(({ id, ...otherSectionProps }) => (
-          <MenuItem key={id} {...otherSectionProps } />
-        ))
+          // this.state.sections.map(({ title, imageUrl, id, size }) => (
+          //   <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+          // ))
+
+          //the 'otherSectionProps' keyword sends the key&value of the state to the component all together
+          this.state.sections.map(({ id, ...otherSectionProps }) => (
+            <MenuItem key={id} {...otherSectionProps} />
+          ))
         }
       </div>
     );
